@@ -7,20 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tripod.promed.domain.Exam;
-import com.tripod.promed.services.ExamService;
+import com.tripod.promed.domain.Medicine;
+import com.tripod.promed.services.MedicineService;
 
 @RestController
-@RequestMapping(value="/exams")
-public class ExamResource {
+@RequestMapping(value="/medicines")
+public class MedicineResource {
 
 	@Autowired
-	private ExamService service;
+	private MedicineService service;
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		Exam obj = service.find(id);
+		Medicine obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
 	}
-	
-}
+}	

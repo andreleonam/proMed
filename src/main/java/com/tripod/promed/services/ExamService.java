@@ -17,6 +17,5 @@ public class ExamService {
 	public Exam find(Integer id) {
 		Optional<Exam> obj = repo.findById(id);
 		return obj.orElse(null);
-	}
-	
+	}	
 }

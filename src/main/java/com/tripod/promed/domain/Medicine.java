@@ -8,23 +8,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Exam implements Serializable{
+public class Medicine implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
-	private String initials; 
 	
-	public Exam() {
+	public Medicine() {
 	}
 
-	public Exam(Integer id, String name, String initials) {
+	public Medicine(Integer id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.initials = initials;
 	}
 
 	public Integer getId() {
@@ -43,14 +41,6 @@ public class Exam implements Serializable{
 		this.name = name;
 	}
 
-	public String getInitials() {
-		return initials;
-	}
-
-	public void setInitials(String initials) {
-		this.initials = initials;
-	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -67,7 +57,7 @@ public class Exam implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Exam other = (Exam) obj;
+		Medicine other = (Medicine) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -75,8 +65,7 @@ public class Exam implements Serializable{
 			return false;
 		return true;
 	}
-
-
+	
 	
 	
 }
