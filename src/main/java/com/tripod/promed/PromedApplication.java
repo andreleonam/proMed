@@ -39,6 +39,8 @@ public class PromedApplication implements CommandLineRunner {
 		Medicine med3 = new Medicine(null, "Sulfassalazina 500mg");
 	
 		medicineRepository.saveAll(Arrays.asList(med1, med2, med3));
+		
+		
 	}
 
 }
